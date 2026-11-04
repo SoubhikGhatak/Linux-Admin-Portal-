@@ -1,0 +1,6 @@
+{
+  "name": "Linux User and Permission Management System",
+  "description": "Professional Linux system administration dashboard for managing users, groups, file permissions, and audit logs with Demo and Local Linux modes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
