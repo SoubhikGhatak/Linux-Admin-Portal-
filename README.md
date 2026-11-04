@@ -122,6 +122,109 @@ curl -s -X PATCH http://localhost:3000/api/files/permissions \
 | `GET` | `/api/files` | List sandbox items with `stat` readback |
 | `POST` | `/api/files` | Create sandbox file or directory |
 | `PATCH` | `/api/files/permissions` | Apply permissions via `chmod` |
+
+
+
+# Linux User and Permission Management System
+
+**Simplifying Linux System Administration Through a Centralized Web-Based Dashboard**
+
+## About the Project
+
+The **Linux User and Permission Management System** is a web-based system administration project designed to make Linux user management, group administration, file permissions, and ownership control more accessible through a centralized graphical interface.
+
+Traditionally, Linux administrators perform these operations using terminal commands such as `useradd`, `usermod`, `groupadd`, `chmod`, and `chown`. This project aims to provide a user-friendly dashboard that simplifies these administrative tasks while retaining Linux's native access-control mechanisms.
+
+The application is designed around a frontend dashboard connected to a locally running backend service, which validates administrative requests and executes approved Linux operations.
+
+## Key Features
+
+* **User Management:** View, create, modify, and manage Linux user accounts.
+* **Group Management:** Create groups and manage user-group membership.
+* **Permission Management:** Inspect and modify read, write, and execute permissions.
+* **Ownership Management:** Manage file and directory ownership and group ownership.
+* **Centralized Dashboard:** Access administrative modules through a unified graphical interface.
+* **Input Validation:** Validate usernames, group names, permission modes, and file paths.
+* **Security Controls:** Apply authentication, authorization, restricted command execution, and the principle of least privilege.
+* **Activity Logging:** Maintain records of administrative operations and their execution status.
+* **Linux Integration:** Interact with native Linux utilities through a locally running backend.
+
+## Proposed Technology Stack
+
+| Component              | Technology                                                   |
+| ---------------------- | ------------------------------------------------------------ |
+| Frontend               | React.js, HTML, CSS, JavaScript                              |
+| Backend                | Python Flask / FastAPI                                       |
+| Operating System       | Kali Linux / Ubuntu                                          |
+| Development Assistance | Google AI Studio                                             |
+| Version Control        | Git and GitHub                                               |
+| API Communication      | REST API                                                     |
+| Linux Administration   | Native Linux command-line utilities                          |
+| Data / Logging         | SQLite or local structured logs, depending on implementation |
+
+## System Architecture
+
+The proposed system follows a client-server architecture:
+
+1. The administrator interacts with the web-based dashboard.
+2. The frontend sends an API request to the local backend.
+3. The backend validates the request and checks authorization.
+4. Approved operations are executed through a restricted command layer.
+5. Linux performs the requested administrative operation.
+6. The backend verifies the result and returns the response to the dashboard.
+7. The activity log records the operation and its status.
+
+## Security Considerations
+
+Since the application interacts with sensitive system-administration functions, security is a central design consideration.
+
+The proposed implementation emphasizes:
+
+* Least-privilege execution.
+* Administrator authentication and authorization.
+* Strict input validation.
+* Restricted and allowlisted Linux operations.
+* Safe command argument handling.
+* File-path restrictions.
+* Administrative activity logging.
+* Testing within a controlled Linux environment.
+
+The application is intended to run locally on the Linux machine being administered. A remotely hosted frontend alone cannot directly manage the local operating system.
+
+## Project Objectives
+
+* Simplify routine Linux user and group administration.
+* Provide graphical control over file permissions and ownership.
+* Demonstrate frontend-backend integration with Linux system utilities.
+* Apply practical Linux system administration concepts.
+* Implement security-conscious administrative workflows.
+* Develop a modular and extensible Linux management application.
+
+## Project Status
+
+**Development planned / in progress.**
+
+This repository is intended to contain the source code, documentation, development resources, and implementation of the Linux User and Permission Management System. Features, screenshots, and testing results will be updated as development progresses.
+
+## Future Enhancements
+
+* Role-Based Access Control (RBAC).
+* Advanced audit logs and activity reports.
+* Access Control List (ACL) management.
+* Account security and status monitoring.
+* Backup and recovery functionality.
+* Secure remote administration.
+* Enhanced dashboard analytics.
+
+---
+
+**Project Type:** Academic Project-Based Learning (PBL)
+**Domain:** Linux System Administration | Cybersecurity | Web Development
+**Institution:** Brainware University
+**Department:** Computer Science and Engineering
+
+*Developed as an academic project to explore the integration of web technologies, Linux administration, and security-focused system management.*
+
 | `PATCH` | `/api/files/ownership` | Change owner/group via `chown` |
 | `DELETE` | `/api/files` | Delete sandbox file/dir |
 | `GET` | `/api/logs` | Fetch activity audit log events |
